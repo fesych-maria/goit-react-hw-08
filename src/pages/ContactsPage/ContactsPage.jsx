@@ -1,0 +1,31 @@
+import css from "./ContactsPage.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { selectError, selectLoading } from "../../redux/contacts/selectors";
+import { fetchContacts } from "../../redux/contacts/operations";
+import ContactForm from "../../components/ContactForm/ContactForm";
+import SearchBox from "../../components/SearchBox/SearchBox";
+import { ErrorMessage } from "formik";
+import Loader from "../../components/Loader/Loader";
+
+const ContactsPage = () => {
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  return (
+    <>
+      <h1 className={css.heading}>Phonebook</h1>
+      <ContactForm />
+      <SearchBox />
+      {isLoading && <Loader />}
+      {isError && <ErrorMessage />}
+      <ContactList />
+    </>
+  );
+};
+
+export default ContactsPage;
