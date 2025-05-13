@@ -60,7 +60,7 @@ export const refreshUserThunk = createAsyncThunk(
         return thunkAPI.rejectWithValue("Token doesn't exist");
       }
       setAuthHeader(savedToken);
-      const response = await API.post("/users/current");
+      const response = await API.get("/users/current");
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

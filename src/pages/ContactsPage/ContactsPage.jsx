@@ -7,6 +7,7 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import { ErrorMessage } from "formik";
 import Loader from "../../components/Loader/Loader";
+import ContactList from "../../components/ContactList/ContactList";
 
 const ContactsPage = () => {
   const isLoading = useSelector(selectLoading);

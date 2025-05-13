@@ -8,9 +8,20 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Layout from "./components/Layout/Layout";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsRefreshing } from "./redux/auth/selectors";
+import { useEffect } from "react";
+import { refreshUserThunk } from "./redux/auth/operations";
 
 const App = () => {
-  return (
+  const isRefreshing = useSelector(selectIsRefreshing);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
+
+  return isRefreshing ? null : (
     <Layout>
       <Routes>
         <Route path={"/"} element={<HomePage />} />
