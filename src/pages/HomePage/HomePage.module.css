@@ -1,0 +1,19 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 180px 30px 20px 30px;
+  h2 {
+    text-align: center;
+    color: #fffef8;
+    font-size: 120px;
+    font-family: "Playwrite DK Loopet";
+    font-weight: 400;
+    font-style: italic;
+    text-shadow: -12px -12px 35px rgba(255, 217, 77, 0.8),
+      2px -12px 35px rgba(255, 217, 77, 0.8),
+      -12px 12px 35px rgba(255, 217, 77, 0.8),
+      12px 12px 35px rgba(255, 217, 77, 0.8),
+      0px 0px 80px rgba(255, 217, 77, 0.4),
+      0px 0px 140px rgba(255, 217, 77, 0.2),
+      0px 0px 160px rgba(255, 255, 255, 0.2);
+  }
+}

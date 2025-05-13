@@ -2,15 +2,14 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import YupPassword from "yup-password";
 import { loginThunk } from "../../redux/auth/operations";
-YupPassword(Yup);
+import css from "./LoginForm.module.css";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Required"),
-    password: Yup.string().password().required("Required"),
+    password: Yup.string().min(8, "Too Short!").required("Required"),
   });
 
   const initialValues = {
@@ -25,29 +24,33 @@ const LoginForm = () => {
     actions.resetForm();
   };
   return (
-    <div>
+    <div className={css.formWrapper}>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <Form>
-          <label htmlFor={emailFieldId}>Email</label>
-          <Field
-            name="email"
-            type="email"
-            placeholder="Email"
-            id={emailFieldId}
-          />
-          <ErrorMessage name="email" component="span" />
-          <label htmlFor={passwordFieldId}>Password</label>
-          <Field
-            name="password"
-            type="password"
-            placeholder="Password"
-            id={passwordFieldId}
-          />
-          <ErrorMessage name="password" component="span" />
+          <div>
+            <label htmlFor={emailFieldId}>Email</label>
+            <Field
+              name="email"
+              type="email"
+              placeholder="Email"
+              id={emailFieldId}
+            />
+            <ErrorMessage name="email" component="span" />
+          </div>
+          <div>
+            <label htmlFor={passwordFieldId}>Password</label>
+            <Field
+              name="password"
+              type="password"
+              placeholder="Password"
+              id={passwordFieldId}
+            />
+            <ErrorMessage name="password" component="span" />
+          </div>
           <button type="submit">Log in</button>
         </Form>
       </Formik>
