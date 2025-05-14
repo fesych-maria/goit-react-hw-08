@@ -10,6 +10,7 @@
   font-weight: 500;
   transition: text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
+    font-weight: 600;
     text-shadow: -12px -12px 35px rgba(111, 111, 188, 0.8),
       2px -12px 35px rgba(111, 111, 188, 0.8),
       -12px 12px 35px rgba(111, 111, 188, 0.8),
@@ -21,6 +22,7 @@
 }
 
 .active {
+  font-weight: 600;
   text-shadow: -12px -12px 35px rgba(111, 111, 188, 0.8),
     2px -12px 35px rgba(111, 111, 188, 0.8),
     -12px 12px 35px rgba(111, 111, 188, 0.8),
