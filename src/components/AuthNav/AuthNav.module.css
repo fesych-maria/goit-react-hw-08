@@ -1,0 +1,31 @@
+.navWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  transition: text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    text-shadow: -12px -12px 35px rgba(111, 111, 188, 0.8),
+      2px -12px 35px rgba(111, 111, 188, 0.8),
+      -12px 12px 35px rgba(111, 111, 188, 0.8),
+      12px 12px 35px rgba(111, 111, 188, 0.8),
+      0px 0px 80px rgba(111, 111, 188, 0.4),
+      0px 0px 140px rgba(111, 111, 188, 0.2),
+      0px 0px 160px rgba(200, 200, 255, 0.2);
+  }
+}
+
+.active {
+  text-shadow: -12px -12px 35px rgba(111, 111, 188, 0.8),
+    2px -12px 35px rgba(111, 111, 188, 0.8),
+    -12px 12px 35px rgba(111, 111, 188, 0.8),
+    12px 12px 35px rgba(111, 111, 188, 0.8),
+    0px 0px 80px rgba(111, 111, 188, 0.4),
+    0px 0px 140px rgba(111, 111, 188, 0.2),
+    0px 0px 160px rgba(200, 200, 255, 0.2);
+}

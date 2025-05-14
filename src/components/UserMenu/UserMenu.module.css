@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  gap: 36px;
+
+  p {
+    color: #000000;
+    font-size: 24px;
+    font-family: "Playwrite DK Loopet";
+    font-weight: 400;
+    transition: text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      text-shadow: -12px -12px 35px rgba(111, 111, 188, 0.8),
+        2px -12px 35px rgba(111, 111, 188, 0.8),
+        -12px 12px 35px rgba(111, 111, 188, 0.8),
+        12px 12px 35px rgba(111, 111, 188, 0.8),
+        0px 0px 80px rgba(111, 111, 188, 0.4),
+        0px 0px 140px rgba(111, 111, 188, 0.2),
+        0px 0px 160px rgba(200, 200, 255, 0.2);
+    }
+  }
+  button {
+    border: none;
+    padding: 8px 10px;
+    max-width: 200px;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 8px 0px #b35959;
+    border-radius: 6px;
+    color: #b35959;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    &:active,
+    &:hover {
+      color: #ffffff;
+      background-color: #b35959;
+    }
+  }
+}

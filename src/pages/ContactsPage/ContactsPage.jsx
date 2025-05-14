@@ -18,14 +18,14 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <h1 className={css.heading}>Phonebook</h1>
+    <div className={css.section}>
+      <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
       <ContactList />
-    </>
+    </div>
   );
 };
 
